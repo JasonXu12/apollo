@@ -4,20 +4,14 @@ licenses(["notice"])
 
 cc_library(
     name = "pytorch",
-    hdrs = glob(["*"]),
-    srcs = ["lib/libtorch.so"],
     includes = [
-        "include",
-        "include/torch/csrc/api/include",
-        "include/torch/csrc/api/include/torch"
-    ],
-    copts = [
-        "-Iinclude",
-        "-Iinclude/torch",
-        "-Iinclude/torch/csrc/api/include/torch",
+        ".",
+        "torch/csrc/api/include",
+        "torch/csrc/api/include/torch"
     ],
     linkopts = [
         "-L/usr/local/apollo/libtorch/lib",
+        "-ltorch",
         "-lc10",
         "-lc10_cuda",
         "-lcaffe2",

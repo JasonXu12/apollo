@@ -256,5 +256,5 @@ new_local_repository(
 new_local_repository(
     name = "pytorch",
     build_file = "third_party/pytorch.BUILD",
-    path = "/usr/local/apollo/libtorch",
+    path = "/usr/local/apollo/libtorch/include",
 )
